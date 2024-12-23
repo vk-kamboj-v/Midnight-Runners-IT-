@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MIDNIGHT RUNNERS PRESENTS...</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url() no-repeat center center/cover;
+            color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #f4f4f4;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 1.5rem;
+        }
+
+        .navbar .user {
+            font-size: 1rem;
+        }
+
+        .main {
+            padding: 2rem;
+        }
+
+        .class-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.2s;
+            color: #f4f4f4;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .class-card-header {
+            background-color: #bcf2f0;
+            color: black;
+            padding: 1rem;
+        }
+
+        .class-card-header h2 {
+            font-size: 1.25rem;
+        }
+
+        .class-card-body {
+            padding: 1rem;
+        }
+
+        .class-card-body p {
+            font-size: 1rem; 
+            color: #ddd;
+        }
+
+        .announcements {
+            background-color: rgba(210, 229, 238, 0.9);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color:#7689e4;
+        }
+
+        .announcements h2 {
+            margin-bottom: 1rem;
+            color: hsl(0, 0%, 2%);
+        }
+
+        .footer {
+            background: rgb(0,0,0,0.8);
+            margin-top: 2rem;
+            text-align: center;
+            color: #ddd;
+            font-size: 1rem;
+        }
+
+        .footer a {
+            color: #4cae4c;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4cae4c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0c5bb7;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <h1>AVAILABLE ASSIGNMENTS</h1>
+            <button onclick="location.href='index.html'"">Home</button>
+            <button onclick="location.href='course.html'"">Courses</button>
+            <button onclick="location.href='login1.html'"">Log Out</button>
+            <div class="user">Welcome, Student</div>
+        </div>
+
+        <div class="main">
+            <div class="class-card">
+                <div class="class-card-header">
+                    <h2>Programming For Problem Solving</h2>
+                </div>
+                <div class="class-card-body">
+                    <p>Instructor: Mr. Vansh Kamboj</p>
+                    <p>Next Assignment Due: Dec 25, 2024</p>
+                    <button onclick="location.href='asspps.docx'"">Start
+                        Learning</button>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-card-header">
+                    <h2>Ecology and Environment</h2>
+                </div>
+                <div class="class-card-body">
+                    <p>Instructor: Mr. Vikash Kuntal</p>
+                    <p>Next Assignment Due: Dec 30, 2024</p>
+                    <button onclick="location.href='asseco.docx'">Start
+                        Learning</button>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-card-header">
+                    <h2>Mathematics</h2>
+                </div>
+                <div class="class-card-body">
+                    <p>Instructor: Mr. Siddharth Singh</p>
+                    <p>Next Assignment Due: Jan 05, 2024</p>
+                    <button onclick="location.href='assmaths.doc'">Start
+                        Learning</button>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-card-header">
+                    <h2>Physics</h2>
+                </div>
+                <div class="class-card-body">
+                    <p>Instructor: Mr. Kaka Mohit Kumar Singh</p>
+                    <p>Next Assignment Due: Jan 12, 2024</p>
+                    <button onclick="location.href='assphysics.pdf'">Start
+                        Learning</button>
+                </div>
+            </div>
+
+            <div class="announcements">
+                <h2>Announcements</h2>
+                <ul>
+                    <li>Holiday break starts from Jan 15, 2024.</li>
+                    <li>New semester begins Feb 01, 2025.</li>
+                    <li>Submit all pending assignments before the break.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Midnight Runners. <a href="#">Privacy Policy</a> | <a
+                    href="#">Terms of Service</a></p>
+        </div>
+
+        <script>
+        // Example interactivity: Announcements toggle
+        function toggleAnnouncements() {
+            const announcements = document.querySelector('.announcements');
+            announcements.classList.toggle('hidden');
+        }
+    </script>
+    </body>
+</html>
