@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    /* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-screen background image */
+body {
+    color: black;
+    font-family: Arial, sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?nature,landscape') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Main container setup */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    color: rgb(214, 70, 70);
+    margin-bottom: 50px;
+}
+
+header h1 {
+    background-color: black;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Form Container styling */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Form Box styling */
+.form-box {
+    background-color: black;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+/* Display the active form */
+#login-form.active, #signup-form.active {
+    display: block;
+}
+
+.form-box h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Textbox input fields */
+.textbox {
+    margin: 20px 0;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.textbox input:focus {
+    border-color: #546ea8;
+}
+
+/* Submit button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #546ea8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4cae4c;
+}
+
+/* Toggle links */
+p {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #ccc;
+}
+
+p a {
+    color: #546ea8;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    color: white;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    text-align: center;
+}
+</style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In / Sign Up</title>
+        <link rel="stylesheet" href="siddu.css">
+    </head>
+    <body>
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header of the page -->
+            <header>
+                <p>Please Log In or Register to continue</p>
+                <a href="index.html">Home</a>
+                <a href="course.html">Courses</a>
+                <a href="resources.html">Resources</a>
+
+            </header>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <!-- Login Form -->
+                <div id="login-form" class="form-box">
+                    <h2>Log In</h2>
+                    <form action="#" method="POST">
+                        <div class="textbox">
+                            <input type="text"
+                                placeholder="Phone Number , E-mail ID"
+                                name="username" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" placeholder="Password"
+                                name="password" required>
+                        </div>
+                        <input type="submit" value="Login" class="btn" href>
+                    </form>
+                    <p>Don't have an account? <a href="#"
+                            onclick="toggleForm()">Register here</a></p>
+                </div>
+
+                <!-- Sign-Up Form -->
+                <div id="signup-form" class="form-box">
+                    <h2>Sign Up</h2>
+                    <form action="#" method="POST">
+                        <div class="textbox">
+                            <input type="text" placeholder="Full Name"
+                                name="name" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="text" placeholder="Phone Number"
+                                name="number" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="email" placeholder="Email Address"
+                                name="email" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" placeholder="Password"
+                                name="password" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password"
+                                placeholder="Confirm Password"
+                                name="confirm-password" required>
+                        </div>
+                        <input type="submit" value="Sign Up" class="btn">
+                    </form>
+                    <p>Already have an account? <a href="#"
+                            onclick="toggleForm()">Login here</a></p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p>Design by MIDNIGHT RUNNERS .</p>
+            </footer>
+        </div>
+
+        <script src="script2.js"></script>
+    </body>
+</html>
