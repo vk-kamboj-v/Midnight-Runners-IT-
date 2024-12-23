@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #e7f2f1;
+}
+
+header {
+    background: #bcf2f0;
+    color: rgb(12, 12, 12);
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav a {
+    color: rgb(12, 12, 12);
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #546ea8;
+    border: 100;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+.course {
+    margin: 20px;
+    display: inline-block;
+    width: 300px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* New Resource Page Styles */
+#new-resources {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.resource-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resource-item h3 {
+    color: #333;
+}
+
+.resource-item p {
+    color: #555;
+}
+
+.view-resource {
+    color: #5cb85c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-resource:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background: #bcf2f0;
+    color: rgb(12, 12, 12);
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
