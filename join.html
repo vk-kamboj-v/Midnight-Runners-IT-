@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Light cyan background color */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.whiteboard {
+    position: relative;
+    width: 70%;
+    height: 500px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+label {
+    margin-left: 10px;
+}
+
+input[type="range"] {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.chat, .students {
+    background-color: #fff;
+    border: 10px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.chat-box {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.chat-message {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+input[type="text"] {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#send-chat {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    width: 75px;
+}
+
+#send-chat:hover {
+    background-color: #0056b3;
+}
+
+#eraser-size {
+    position: absolute;
+    border: 2px dashed #007bff;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    display: none;
+}
+
+#text-input {
+    position: absolute;
+    border: 1px solid #007bff;
+    background-color: white;
+    display: none;
+    z-index: 1000;
+    font-size: 20px;
+    padding: 2px;
+    width: auto;
+    min-width: 100px;
+}
+.todo {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.todo h2 {
+    margin-bottom: 10px;
+}
+
+#todo-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#add-todo {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    width: 75px;
+}
+
+#add-todo:hover {
+    background-color: #0056b3;
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.todo-item button:hover {
+    background-color: #c82333;
+}
+.chat input[type="text"], .todo input[type="text"] {
+    width: calc(100% - 105px);
+    margin-bottom: 5px;
+}
+
+#username-input, #todo-username {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.chat input[type="text"]:nth-child(2), .todo input[type="text"]:nth-child(2) {
+    margin-bottom: 0;
+}
+
+#chat-input, #todo-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#send-chat, #add-todo {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    width: 75px;
+}
+
+#send-chat:hover, #add-todo:hover {
+    background-color: #0056b3;
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.todo-item button:hover {
+    background-color: #c82333;
+}
+#todo-status {
+    width: calc(100% - 105px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>Join Virtual Classroom</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Join Virtual Classroom</h1>
+            <input type="text" id="student-name" placeholder="Enter your name">
+            <button id="join-button">Join</button>
+        </div>
+        <script>
+        document.getElementById('join-button').addEventListener('click', function() {
+            const name = document.getElementById('student-name').value.trim();
+            if (name) {
+                // Store the student's name in local storage
+                localStorage.setItem('studentName', name);
+                // Redirect to the main classroom page
+                window.location.href = 'vc.html';
+            } else {
+                alert('Please enter your name.');
+            }
+        });
+    </script>
+    </body>
+</html>
